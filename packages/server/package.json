@@ -15,8 +15,7 @@
     "passport-jwt": "^4.0.1",
     "pg": "^8.10.0",
     "sequelize": "^6.29.3",
-    "swagger-ui-express": "^4.6.2",
-    "web": "^0.1.0"
+    "swagger-ui-express": "^4.6.2"
   },
   "keywords": [],
   "author": "",

@@ -11,7 +11,8 @@
     "preinstall": "npx lerna bootstrap",
     "precommit": "npx lint-staged",
     "lint": "eslint packages/**/*.{js,ts,jsx,tsx}",
-    "format": "prettier --write 'packages/**/*.{js,ts,jsx,tsx}'"
+    "format": "prettier --write 'packages/**/*.{js,ts,jsx,tsx}'",
+    "b": "lerna exec npm install"
   },
   "keywords": [
     "monorepo"

@@ -9,18 +9,14 @@ COPY . .
 
 RUN npm install -g lerna
 
-RUN cd /app/packages/web
-
-RUN npm i
-
-RUN cd /app/packages/server
-
-RUN npm i
-
-RUN cd /app
-
 # Install dependencies for all packages in the monorepo
 RUN lerna bootstrap
 
+RUN lerna exec npm install
+
 # Build all packages in the monorepo
-#RUN npm run build
+#RUN npm start
+
+EXPOSE 3000
+EXPOSE 3001
+ENTRYPOINT ["/bin/sh","-c", "npm start"]
