@@ -78,10 +78,10 @@ const Login: React.FC<Props> = () => {
           <Spinner animation="border" className="my-3" />
         ) : (
           <Button
-            variant="primary"
+            variant="secondary"
             type="submit"
             data-testid="loginBtn"
-            className="rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 ease-in-out"
+            className="p-grid dash-bg rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 ease-in-out"
           >
             Login
           </Button>

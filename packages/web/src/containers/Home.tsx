@@ -20,7 +20,7 @@ const Home: React.FC<Props> = (props) => {
           <div className="d-flex flex-column justify-content-center align-items-center">
             <Button
               variant="secondary"
-              className="mb-3 m-3 btn-custom"
+              className="mb-3 m-3 btn-custom p-grid dash-bg"
               onClick={() => {
                 navigate("/checkout");
               }}
@@ -29,7 +29,7 @@ const Home: React.FC<Props> = (props) => {
             </Button>
             <Button
               variant="secondary"
-              className="mb-3 m-3 btn-custom"
+              className="mb-3 m-3 btn-custom p-grid dash-bg"
               onClick={() => {
                 navigate("/donor");
               }}
@@ -38,7 +38,7 @@ const Home: React.FC<Props> = (props) => {
             </Button>
             <Button
               variant="secondary"
-              className="mb-3 m-3 btn-custom"
+              className="mb-3 m-3 btn-custom p-grid dash-bg"
               onClick={() => {
                 navigate("/");
               }}
@@ -47,7 +47,7 @@ const Home: React.FC<Props> = (props) => {
             </Button>
             <Button
               variant="secondary"
-              className="mb-3 m-3 btn-custom"
+              className="mb-3 m-3 btn-custom p-grid dash-bg"
               onClick={() => {
                 navigate("/sale");
               }}
@@ -60,7 +60,7 @@ const Home: React.FC<Props> = (props) => {
           <div className="d-flex flex-column justify-content-center align-items-center">
             <div className="container">
               <h2>Feed</h2>
-              <Table striped bordered>
+              <Table striped bordered className="w-100">
                 <thead>
                   <tr>
                     <th>SrNo</th>

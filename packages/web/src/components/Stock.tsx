@@ -155,7 +155,11 @@ const Stock: React.FC<Props> = (props) => {
               stockContext.stockState.loading === StockTypes.STOCK ? (
                 <Spinner animation="border" className="my-3" />
               ) : (
-                <Button variant="primary" type="submit">
+                <Button
+                  variant="secondary"
+                  type="submit"
+                  className="p-grid dash-bg w-100"
+                >
                   Add Stock
                 </Button>
               )}
@@ -180,7 +184,13 @@ const Stock: React.FC<Props> = (props) => {
                 stockContext.stockState.loading === StockTypes.CATEGORY ? (
                   <Spinner animation="border" className="my-3" />
                 ) : (
-                  <Button type="submit">Add Category</Button>
+                  <Button
+                    variant="secondary"
+                    type="submit"
+                    className="p-grid dash-bg w-100"
+                  >
+                    Add Category
+                  </Button>
                 )}
               </form>
             </div>

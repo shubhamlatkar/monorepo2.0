@@ -118,7 +118,8 @@ const SignUp: React.FC<Props> = () => {
         ) : (
           <Button
             type="submit"
-            className="btn btn-primary rounded-lg py-2 px-4 mb-3"
+            variant="secondary"
+            className="btn btn-primary rounded-lg py-2 px-4 mb-3 p-grid dash-bg"
           >
             Sign Up
           </Button>

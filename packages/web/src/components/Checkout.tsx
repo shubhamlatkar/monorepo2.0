@@ -131,9 +131,9 @@ const Checkout: React.FC<Props> = () => {
                 <Spinner animation="border" className="my-3" />
               ) : (
                 <Button
-                  variant="primary"
+                  variant="secondary"
                   type="submit"
-                  className="rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 ease-in-out w-100"
+                  className="rounded-lg px-4 py-2 hover:bg-blue-600 transition duration-300 ease-in-out w-100 p-grid dash-bg"
                 >
                   checkout
                 </Button>
