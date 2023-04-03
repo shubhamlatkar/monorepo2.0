@@ -108,9 +108,9 @@ const SignUp: React.FC<Props> = () => {
               }
             }}
             required
-            pattern="\d{10}"
-            minLength={10}
-            maxLength={10}
+            // pattern="\d{10}"
+            // minLength={10}
+            // maxLength={10}
           />
         </Form.Group>
         {loading === GeneralTypes.SIGNUP ? (

@@ -6,7 +6,7 @@ import { GeneralTypes } from "../interface/User/UserStateType";
 import UserContext from "../store/context/UserContext";
 interface Props {}
 
-const Donor: React.FC<Props> = (props) => {
+const Donor: React.FC<Props> = () => {
   const userContext = useContext(UserContext);
 
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const Donor: React.FC<Props> = (props) => {
     location: "",
     email: "",
     type: "",
-    phone: ""
+    phone: "",
   });
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const Donor: React.FC<Props> = (props) => {
                 <Form.Label>Name</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Enter item name"
+                  placeholder="Enter name"
                   value={formValues.name}
                   required
                   onChange={(e) =>
@@ -62,7 +62,7 @@ const Donor: React.FC<Props> = (props) => {
                 <Form.Label>Email</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Enter item email"
+                  placeholder="Enter email"
                   value={formValues.email}
                   onChange={(e) =>
                     setFormValues({ ...formValues, email: e.target.value })
@@ -81,7 +81,7 @@ const Donor: React.FC<Props> = (props) => {
                     if (/^\d+(\.\d{0,2})?$/.test(stripped) || stripped === "") {
                       setFormValues({
                         ...formValues,
-                        phone: stripped
+                        phone: stripped,
                       });
                     }
                   }}
@@ -95,7 +95,7 @@ const Donor: React.FC<Props> = (props) => {
                 <Form.Label>Location</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Enter item loc"
+                  placeholder="Enter loc"
                   value={formValues.location}
                   onChange={(e) =>
                     setFormValues({ ...formValues, location: e.target.value })
@@ -124,7 +124,11 @@ const Donor: React.FC<Props> = (props) => {
               userContext.userState.loading === GeneralTypes.DONOR ? (
                 <Spinner animation="border" variant="primary" />
               ) : (
-                <Button variant="primary" type="submit">
+                <Button
+                  variant="secondary"
+                  type="submit"
+                  className="p-grid dash-bg w-100"
+                >
                   Submit
                 </Button>
               )}
@@ -164,7 +168,8 @@ const Donor: React.FC<Props> = (props) => {
                         <td>{row.location}</td>
                         <td>
                           <Button
-                            variant="primary"
+                            variant="secondary"
+                            className="p-grid dash-bg w-100"
                             onClick={() => handleDonate(row.id)}
                           >
                             Donate

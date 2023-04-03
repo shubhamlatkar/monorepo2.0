@@ -22,9 +22,8 @@
     "sass": "1.58.3"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage --env=jsdom",
+    "test": "react-scripts test --coverage --env=jsdom --forceExit --collectCoverageFrom=src/**/*.{ts,tsx} --runInBand --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

@@ -14,11 +14,11 @@ const CustomNavbar: React.FC<Props> = ({ isAuthenticated }) => {
   return (
     <React.Fragment>
       <Navbar
-        bg="dark"
+        // bg="dark"
         variant="dark"
         expand="md"
         expanded={expanded}
-        style={{ zIndex: 2 }}
+        style={{ zIndex: 2, backgroundColor: "#8c2332" }}
       >
         <Container>
           <Navbar.Brand>
