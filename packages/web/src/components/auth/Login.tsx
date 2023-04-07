@@ -38,6 +38,7 @@ const Login: React.FC<Props> = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     userContext?.login(email, password);
+    setPassword("");
     // Add your Auth logic here
     // history.push("/dashboard");
   };

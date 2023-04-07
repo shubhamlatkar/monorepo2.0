@@ -13,32 +13,6 @@ const {
 } = require("../services/password-crypt");
 const Token = require("../models/Token");
 
-router.get(
-  "/getall",
-  passport.authenticate("jwt", { session: false }),
-  async (req, res) => {
-    // hashPassword('test123')
-    //   .then((hashedPassword) => {
-    //     const uid = uuidv4();
-    //     return User.create({
-    //       userId: uid,
-    //       name: 'John Doe',
-    //       email: 'john.doe@example.com',
-    //       password: hashedPassword,
-    //     });
-    //   })
-    //   .then((user) => {
-    //     res.send(user);
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //     res.status(500).send('Error creating user');
-    //   });
-    const users = await User.findAll();
-    res.json(users);
-  }
-);
-
 router.post("/register", async (req, res) => {
   try {
     const { name, email, password, phone } = req.body;
@@ -74,26 +48,30 @@ router.post("/register", async (req, res) => {
 
     // Return user and token data
 
-    res.status(200).json({ user: user.id, token: token });
+    res.status(200).json({ user: user.id, token });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal server error" });
   }
 });
 
-router.get("/", async (req, res) => {
-  try {
-    const users = await User.findAll();
-    res.json(users);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Internal server error");
+router.get(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  async (req, res) => {
+    try {
+      const users = await User.findAll();
+      res.json(users);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Internal server error");
+    }
   }
-});
+);
 
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  const user = await User.findOne({ where: { email: email } });
+  const user = await User.findOne({ where: { email } });
   if (!user) {
     return res.status(401).json({ message: "Invalid email or password" });
   }
@@ -106,7 +84,7 @@ router.post("/login", async (req, res) => {
   });
   return res.status(200).json({
     message: "Login successful",
-    token: token,
+    token,
     id: user.id,
     username: user.name,
   });
@@ -130,7 +108,7 @@ router.get(
       const token = authHeader.split(" ")[1];
 
       Token.destroy({
-        where: { token: token },
+        where: { token },
       });
       res.json(token);
     } catch (error) {
